@@ -1,152 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="popup.css">
-    <title>nxtrx - main-hub</title>
+    <title>nxtrx</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="hub">
-        <div id="main-intro">
-            <!--  <p id="main-text">&lt;<span class="orange">nxtrx</span>.<span class="blue">github</span>(<span class="green">&quot;io/main-hub/&quot;</span>)&gt;</p> -->
-            <p class="margin">&lt;<span class="red">name</span>&gt;nxtrx&lt;/<span class="red">name</span>&gt;</p>
-            <p class="margin">&lt;<span class="blurple">discord</span>&gt;@nxtrx&lt;/<span class="blurple">discord</span>&gt;</p>
-            <p class="margin">&lt;<span class="ytred">youtube</span>&gt;<a href="https://www.youtube.com/@nxtrx." target="_blank" class="link">simracing</a>, <a href="https://www.youtube.com/@nxtrx_devlog" target="_blank" class="link">devlog</a>&lt;/<span class="ytred">youtube</span>&gt;</p>
-            <p></p>
-            <p class="margin">&lt;<span class="red">about</span>&gt;</p>
-            <p class="margin indent">
-                simracing livery designer,<br>
-                computer science student,<br>
-                learning 3d grahics in blender, <br>
-                learning godot,<br>
-                ocassionally take photos
-                
+    <!--page-->
+    <div class="main-wrapper">
 
-            </p>
-            <p class="margin">&lt;/<span class="red">about</span>&gt;</p>
+        <!--header-->
+        <div class="site-header"><a href="home.html" target="content-frame"><img src="imgs/text.png"></a></div>
+        <!--header-->
 
-            <p></p>
-            <p class="margin">&lt;<span class="red">status</span>&gt;<span class="orange">COMMISSIONS</span> are currently<span class="orange"> CLOSED</span>&lt;/<span class="red">status</span>&gt;</p>
-            
+        <!--content-->
+        <div class="top-row">
 
-            <p></p>
-            <p class="margin">&lt;<span class="red">script</span>&gt;</p>
-            <p class="margin indent"><span class="red">console</span>.<span class="blue">log</span>(<span class="green">"single scroll down for portfolio"</span>)</p>
-            <p class="margin">&lt;/<span class="red">script</span>&gt;</p>
-            <div id="console">
-                <p>> <span class="purple">single scroll down for portfolio</span></p>
+            <!--iframe-->
+            <div class="content-area">
+                <iframe name="content-frame" id="content-frame" src="home.html" allowtransparency="true"></iframe>
+            </div>
+            <!--iframe-->
+
+            <!--navigation-->
+            <nav class="sidebar">
+                <div class="lil-header"><img style="margin: 5px;" src="imgs/nav.png"></div>
+                <a style="border-top: 1px dashed #fff;" href="home.html" target="content-frame">✘ home ✘</a>
+                <a href="construction.html" target="content-frame">✘ about ✘</a>
+                <a href="construction.html" target="content-frame">✘ setup ✘</a>
+                <a href="favourites.html" target="content-frame">✘ favourites ✘</a>
+                <a href="construction.html" target="content-frame">✘ links ✘</a>
+                <a href="construction.html" target="content-frame">✘ photos ✘</a>
+            </nav>
+            <!--navigation-->
+
+        </div>
+        <!--content-->
+        <!--
+        <div class="comment-section">
+            <div class="comment-header">leave a comment :3</div>
+            <div class="comment-form">
+                <div class="input-group">
+                    <label>Name</label>
+                    <input type="text">
+                </div>
+                <div class="input-group">
+                    <label>Website (Optional)</label>
+                    <input type="text">
+                </div>
+                <textarea placeholder="Write something..."></textarea>
             </div>
         </div>
-        <div id="info" class="hidden">
-            <p class="margin">&lt;<span class="red">div</span>&gt;</p>
-            
-            <p class="margin indent">&lt;<span class="red">p</span>&gt;DESIGN&lt;/<span class="red">p</span>&gt;</p>
+        -->
+        <!--footer-->
+        <footer>(c) 2026 nxtrx All Rights Reserved.</footer>
+        <!--footer-->
 
-            <div class=" indent dropdown">
-                <p id="gfx-list-show2" class="margin">&lt;<span class="red">ul</span>&gt;</p>
-            </div>
-            <div id="gfx-list">
-                <p class="margin indent2x">&lt;<span class="red">li</span>&gt;&lt;<span class="red">a</span>&gt;<a href="https://www.behance.net/NxtrxGraphics" target="_blank" class="link">Behance</a>&lt;/<span class="red">a</span>&gt;&lt;/<span class="red">li</span>&gt;</p>
-            </div>
-
-            <p class="margin indent">&lt;/<span class="red">ul</span>&gt;</p>
-
-            <p></p>
-
-            <p class="margin indent">&lt;<span class="red">p</span>&gt;DEVELOPMENT&lt;/<span class="red">p</span>&gt;</p>
-
-            <div class=" indent dropdown">
-                <p id="webdev-list-show2" class="margin">&lt;<span class="red">ul</span>&gt;</p>
-            </div>
-
-            <div id="webdev-list">
-                <p class="margin indent2x">&lt;<span class="red">li</span>&gt;&lt;<span class="red">a</span>&gt;<a href="https://github.com/nxtrx" target="_blank" class="link">Github</a>&lt;/<span class="red">a</span>&gt;&lt;/<span class="red">li</span>&gt;</p>
-            </div>
-
-            <p class="margin indent">&lt;/<span class="red">ul</span>&gt;</p>
-<!--
-            <p></p>
-            <p class="margin indent">&lt;<span class="red">p</span>&gt;PHOTOGRAPHY&lt;/<span class="red">p</span>&gt;</p>
-
-            <div class="indent dropdown">
-                <p id="hobbies-list-show2" class="margin">&lt;<span class="red">ul</span>&gt;</p>
-            </div>
-
-            <div id="hobbies-list">
-                <p class="margin indent2x">&lt;<span class="red">li</span>&gt;&lt;<span class="red">a</span>&gt;<a href="photography/photography.html" class="link">Real</a>&lt;/<span class="red">a</span>&gt;&lt;/<span class="red">li</span>&gt;</p>
-                <p class="margin indent2x">&lt;<span class="red">li</span>&gt;&lt;<span class="red">a</span>&gt;<a href="photography/photography.html" class="link">Virtual</a>&lt;/<span class="red">a</span>&gt;&lt;/<span class="red">li</span>&gt;</p>
-            </div>
-    -->
-            <p class="margin indent">&lt;/<span class="red">ul</span>&gt;</p>
-            <p class="margin">&lt;/<span class="red">div</span>&gt;</p>
-        </div>
-
-        
-
-    <script>
-
-
-        document.addEventListener("scroll", function(){
-            scrollPos = window.scrollY
-            if (scrollPos > 50){
-                document.querySelector("#main-intro").classList.add("hidden");
-                document.querySelector("#info").classList.remove("hidden");
-            } 
-            else{
-                document.querySelector("#main-intro").classList.remove("hidden");
-                document.querySelector("#info").classList.add("hidden");
-
-            };
-        });
-
-        
-        document.querySelector("#gfx-list-show").addEventListener("click", function(){
-            document.querySelector("#gfx-list").classList.toggle("displayNone");
-            document.querySelector("#gfx-list-show").classList.toggle("rotate");
-
-        });
-
-        document.querySelector("#gfx-list-show2").addEventListener("click", function(){
-            document.querySelector("#gfx-list").classList.toggle("displayNone");
-            document.querySelector("#gfx-list-show").classList.toggle("rotate");
-
-        });
-
-        document.querySelector("#webdev-list-show").addEventListener("click", function(){
-            document.querySelector("#webdev-list").classList.toggle("displayNone");
-            document.querySelector("#webdev-list-show").classList.toggle("rotate");
-
-        });
-
-        document.querySelector("#webdev-list-show2").addEventListener("click", function(){
-            document.querySelector("#webdev-list").classList.toggle("displayNone");
-            document.querySelector("#webdev-list-show").classList.toggle("rotate");
-
-        });
-
-        
-        document.querySelector("#hobbies-list-show").addEventListener("click", function(){
-            document.querySelector("#hobbies-list").classList.toggle("displayNone");
-            document.querySelector("#hobbies-list-show").classList.toggle("rotate");
-
-        });
-
-        document.querySelector("#hobbies-list-show2").addEventListener("click", function(){
-            document.querySelector("#hobbies-list").classList.toggle("displayNone");
-            document.querySelector("#hobbies-list-show").classList.toggle("rotate");
-
-        });
-
-        setTimeout(showModal,1000);
-
-        function showModal(){
-        $(".pop").show()
-        }
-                
-    </script>
-
+    </div>
+    <!--page-->
 </body>
 </html>
