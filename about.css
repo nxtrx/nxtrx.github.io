@@ -16,6 +16,7 @@ p{
     justify-content: center;
     align-items: center;
     background-image: url('imgs/bg-header.png');
+    border: 1px dashed #fff;
 }
 
 .content-area { flex-grow: 1; }
