@@ -62,7 +62,7 @@ span{
     color:white;
     background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(23, 23, 23, 1) 100%);
     position: relative;
-    max-height: 165px;
+    max-height: 190px;
     overflow-y: auto;
 }
 
