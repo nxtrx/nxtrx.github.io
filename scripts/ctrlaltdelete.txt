@@ -1,0 +1,24 @@
+#!/bin/bash
+
+ACTION=$(echo -e "Lock Screen\nLog Out\nShutdown\nSleep\nRestart" | rofi -dmenu -p "System Control")
+
+case $ACTION in
+    "Sleep")
+        systemctl suspend
+        ;;
+    "Lock Screen")
+        loginctl lock-session
+        ;;
+    "Log Out")
+        qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+        ;;
+    "Shutdown")
+        shutdown now
+        ;;
+    "Restart")
+        reboot
+        ;;
+    *)
+        exit 1
+        ;;
+esac

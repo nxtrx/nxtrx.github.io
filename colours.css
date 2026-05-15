@@ -1,0 +1,8 @@
+:root {
+    --bg-color: #0055FF44;
+    --text-color: #7ea2ea;
+}
+
+span {
+    color: var(--text-color);
+}

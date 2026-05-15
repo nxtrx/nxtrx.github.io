@@ -1,0 +1,39 @@
+#!/bin/bash
+
+WALL_DIR="/home/jamesw/Pictures/wallpapers"
+CACHE_DIR="$HOME/.cache/wallpaper-thumbs"
+mkdir -p "$CACHE_DIR"
+
+find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) | while read -r img; do
+    img_name=$(basename "$img")
+    if [ ! -f "$CACHE_DIR/$img_name" ]; then
+        magick "$img" -thumbnail 320x180^ -gravity center -extent 320x180 "$CACHE_DIR/$img_name" &
+    fi
+done
+
+SELECTED_WALLPAPER=$(
+    find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.png" -o -iname "*.jpeg" \) -exec basename {} \; | sort | while read -r name; do
+        echo -en "$name\0icon\x1f$CACHE_DIR/$name\n"
+    done | rofi -dmenu -i -p "Select Wallpaper" \
+        -theme-str '
+        configuration { show-icons: true; }
+        window { width: 1000px; }
+        listview { columns: 5; lines: 1; dynamic:true;}
+        element { orientation: vertical; children: [ "element-icon", "element-text" ]; width:320px; padding: 0px;}
+        element-icon { size:180px; horizontal-align: 0.5; }
+        element-text { font-size:8px; horizontal-align: 0.5; }'
+)
+
+if [ -n "$SELECTED_WALLPAPER" ]; then
+
+    FULL_PATH="$WALL_DIR/$SELECTED_WALLPAPER"
+
+    dbus-send --session --dest=org.kde.plasmashell --type=method_call /PlasmaShell org.kde.PlasmaShell.evaluateScript "string:
+    var Desktops = desktops();
+    for (i=0;i<Desktops.length;i++) {
+        var d = Desktops[i];
+        d.wallpaperPlugin = 'org.kde.image';
+        d.currentConfigGroup = ['Wallpaper', 'org.kde.image', 'General'];
+        d.writeConfig('Image', 'file://${FULL_PATH}');
+    }"
+fi

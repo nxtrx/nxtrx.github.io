@@ -1,3 +1,5 @@
+@import url("colours.css");
+
 body{
     background-color: transparent;
     color: #fff;
@@ -15,7 +17,8 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('imgs/bg-header.png');
+    background: linear-gradient(to top, var(--bg-color), var(--bg-color)), url('imgs/bg-small.png');
+    background-blend-mode: overlay;
 }
 
 .heading{
@@ -52,10 +55,6 @@ p{
     margin: 0 0 5px 0;
     padding-bottom: 5px;
     border-bottom: 1px dashed #fff;
-}
-
-span{
-    color: #7ea2ea;
 }
 
 #statuscafe {

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <div class="site-header"><a href="home.html" target="content-frame"><img src="imgs/text.png"></a></div>
+        <div class="site-header"><img src="imgs/text.png"></div>
         <div class="top-row">
 
             <!--iframe-->
@@ -20,29 +20,29 @@
 
             <nav class="sidebar">
                 <div class="lil-header"><img style="margin: 5px;" src="imgs/nav.png"></div>
-                <a class="sidebar-link" style="border-top: 1px dashed #fff;" href="home.html" target="content-frame">✘ home ✘</a>
-                <a class="sidebar-link" href="about.html" target="content-frame">✘ about ✘</a>
-                <!--<a class="sidebar-link" href="construction.html" target="content-frame">✘ setup ✘</a>-->
-                <a class="sidebar-link" href="favourites.html" target="content-frame">✘ favourites ✘</a>
-                <a class="sidebar-link" href="setup.html" target="content-frame">✘ setup ✘</a>
-                <a class="sidebar-link" href="photos.html" target="content-frame">✘ photos ✘</a>
-                <a class="sidebar-link" href="buttons.html" target="content-frame">✘ buttons ✘</a>
+                <a onclick="play()" class="sidebar-link" style="border-top: 1px dashed #fff;" href="home.html" target="content-frame">✘ home ✘</a>
+                <a onclick="play()" class="sidebar-link" href="about.html" target="content-frame">✘ about ✘</a>
+                <a onclick="play()" class="sidebar-link" href="links.html" target="content-frame">✘ links ✘</a>
+                <a onclick="play()" class="sidebar-link" href="favourites.html" target="content-frame">✘ favourites ✘</a>
+                <a onclick="play()" class="sidebar-link" href="setup.html" target="content-frame">✘ setup ✘</a>
+                <a onclick="play()" class="sidebar-link" href="photos.html" target="content-frame">✘ photos ✘</a>
+                <a onclick="play()" class="sidebar-link" href="buttons.html" target="content-frame">✘ buttons ✘</a>
                 <div class="lil-header"><img style="margin: 5px;" src="imgs/my-button.png"></div>
                 <img style="margin: 20px;" src="imgs/button.png">
                 <textarea style="margin-bottom: 20px;" readonly=""><a href="https://nxtrx.xyz" target="_blank"><img src="https://nxtrx.xyz/imgs/button.png" alt="nxtrx"></a></textarea>
                 <div class="lil-header"><img style="margin: 5px;" src="imgs/webrings.png"></div>
 
                 <map name="retronautmap">
-                    <area href="https://webring.dinhe.net/prev/https://nxtrx.xyz/" target="_top" shape="rect" coords="0,12,19,29" alt="previous" title="previous">
-                    <area href="https://webring.dinhe.net/next/https://nxtrx.xyz/" target="_top" shape="rect" coords="110,12,129,29" alt="previous" title="previous">
+                    <area onclick="play()" href="https://webring.dinhe.net/prev/https://nxtrx.xyz/" target="_top" shape="rect" coords="0,12,19,29" alt="previous" title="previous">
+                    <area onclick="play()" href="https://webring.dinhe.net/next/https://nxtrx.xyz/" target="_top" shape="rect" coords="110,12,129,29" alt="previous" title="previous">
                 </map>
                 <img usemap="#retronautmap" src="imgs/retronaut.png" style="margin-top: 20px; margin-bottom: 20px;" alt="retronaut webring">
 
                 <map name="noaimini10">
-                    <area href="https://baccyflap.com/noai" shape="poly" coords="19,3,19,9,30,9,30,21,19,21,19,29,68,29,68,3" target="_blank" alt="no ai webring" title="no ai webring">
-                    <area href="https://baccyflap.com/noai/?prv&s=nxt" target="_top" shape="rect" coords="0,0,16,20" alt="previous" title="previous">
-                    <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="20,12,28,20" alt="random" title="random">
-                    <area href="https://baccyflap.com/noai/?nxt&s=nxt" target="_top" shape="rect" coords="71,10,87,30" alt="next" title="next">
+                    <area onclick="play()" href="https://baccyflap.com/noai" shape="poly" coords="19,3,19,9,30,9,30,21,19,21,19,29,68,29,68,3" target="_blank" alt="no ai webring" title="no ai webring">
+                    <area onclick="play()" href="https://baccyflap.com/noai/?prv&s=nxt" target="_top" shape="rect" coords="0,0,16,20" alt="previous" title="previous">
+                    <area onclick="play()" href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="20,12,28,20" alt="random" title="random">
+                    <area onclick="play()" href="https://baccyflap.com/noai/?nxt&s=nxt" target="_top" shape="rect" coords="71,10,87,30" alt="next" title="next">
                 </map>
                 <img style="margin-bottom: 20px;" usemap="#noaimini10" src="https://baccyflap.com/noai/miniwidget10.gif" alt="a black rectangle outlined in animated, shifting red and blue pixels, moving around the sign. there are two arrows, one pointing left and one right, protruding from the sign. on the sign are the words THE NO AI WEBRING and a small question mark beside them">
             </nav>
@@ -52,5 +52,12 @@
         <footer>(c) 2026 nxtrx All Rights Reserved.</footer>
 
     </div>
+    <script>
+      function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+    </script>
+    <audio id="audio" src="sounds/boop.mp3"></audio>
 </body>
 </html>

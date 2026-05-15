@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+input_dir="/home/jamesw/Pictures/image-manipulation/script-input/"
+output_dir="/home/jamesw/Pictures/image-manipulation/script-output/"
+mkdir -p "$output_dir"
+
+initial_resize=$(printf "64x64\n128x128\n256x256\n512x512\n768x768\n1024x1024" | rofi -dmenu -p "Initial Resize")
+[ -z "$initial_resize" ] && exit 1
+
+num_colors=$(printf "2\n4\n6\n8\n10\n12\n14\n16\n20\n24\n32\n64" | rofi -dmenu -p "Color Count")
+[ -z "$num_colors" ] && exit 1
+
+final_resize=$(printf "128x128\n256x256\n512x512\n1024x1024\n1536x1536\n2048x2048" | rofi -dmenu -p "Final Resize")
+[ -z "$final_resize" ] && exit 1
+
+find "$input_dir" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -print0 |
+while IFS= read -r -d '' image; do
+    filename=$(basename "$image")
+    filename_no_ext="${filename%.*}"
+
+    output_image_path="$output_dir/${filename_no_ext}-${initial_resize}-c${num_colors}.png"
+
+    magick "$image" \
+        -resize "$initial_resize" \
+        -dither FloydSteinberg \
+        -colors "$num_colors" \
+        -filter point \
+        -resize "$final_resize" \
+        "$output_image_path"
+
+done

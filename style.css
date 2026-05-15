@@ -1,10 +1,9 @@
-/* 1. Imports & Global */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url("colours.css");
 
 * { box-sizing: border-box; font-family: monospace; }
 
 body {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imgs/bg2.png') #000;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('imgs/bg4.png') #000;
     background-attachment: fixed;
     margin: 0;
     color: #fff;
@@ -13,7 +12,8 @@ body {
 .site-header {
     width: 100%;
     height: 180px;
-    background-image: url('imgs/bg-header.png');
+    background: linear-gradient(to top, var(--bg-color), var(--bg-color)), url('imgs/bg-small.png');
+    background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -28,7 +28,6 @@ body {
     margin: 0px auto;
     display: flex;
     flex-direction: column;
-    /*border: 1px solid #fff;*/
     box-shadow: 30px 0px 25px #000, -30px 0px 25px #000;
 
 }
@@ -52,7 +51,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('imgs/bg-header.png');
+    background: linear-gradient(to top, var(--bg-color), var(--bg-color)), url('imgs/bg-small.png');
+    background-blend-mode: overlay;
 }
 
 .lil-header h2{
@@ -60,9 +60,9 @@ body {
     color: #fff;
 }
 
-.sidebar-link {border-bottom: 1px dashed #fff; padding: 9px;}
+.sidebar-link {border-bottom: 1px dashed #fff; padding: 7px;}
 
-a { font-size: 1.2rem; color: #fff; text-decoration: none; display: block; font-weight: 700; }
+a { font-size: 1.1rem; color: #fff; text-decoration: none; display: block; font-weight: 700; }
 a:hover { color: #fff; text-shadow: 0 0 5px #fff; }
 
 /* 4. Content Area (Right) */
@@ -96,6 +96,6 @@ footer{
     padding: 10px;
 }
 
-textarea {
-
+span{
+    var(--text-color);
 }
